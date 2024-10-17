@@ -9,7 +9,7 @@ body {
 }
 
 header {
-    background-color: #333;
+    background-color: #cc1f90;
     color: white;
     padding: 20px;
     text-align: center;
@@ -18,6 +18,24 @@ header {
 h1 {
     margin: 0;
 }
+
+/* Animation styles for header content */
+.header-content {
+    overflow: hidden; /* Prevent overflow during animation */
+    white-space: nowrap; /* Prevent line breaks */
+    animation: scroll 11s linear infinite; /* Scroll animation */
+}
+
+/* Keyframe animation */
+@keyframes scroll {
+    0% {
+        transform: translateX(-100%); /* Start off-screen to the right */
+    }
+    100% {
+        transform: translateX(100%); /* Move to off-screen to the left */
+    }
+}
+
 
 section {
     margin: 20px;
@@ -46,7 +64,7 @@ label {
 
 /* Button styling */
 button {
-    background-color: #28a745;
+    background-color: #1ebc1e;
     color: white;
     padding: 10px 20px;
     border: none;
@@ -57,7 +75,7 @@ button {
 }
 
 button:hover {
-    background-color: #218838;
+    background-color: #06fa16;
 }
 
 /* Product list section */
