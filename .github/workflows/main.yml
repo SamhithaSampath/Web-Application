@@ -1,0 +1,28 @@
+name: CI/CD Workflow
+
+on:
+  push:
+    branches:
+      - main  # Triggers on push to the main branch
+  pull_request: # Triggers on pull request to the main branch
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Build
+        run: echo "Building project..."  # This step can be customized if you have a build step, but it can stay as is for pure HTML/CSS/JS
+
+      - name: Deploy to Render
+        env:
+          RENDER_API_KEY: ${{ secrets.RENDER_API_KEY }}  # Ensure to set this in your repository secrets
+        run: |
+          curl -X POST https://api.render.com/v1/services/YOUR_SERVICE_ID/deploys \
+          -H "Authorization: Bearer $RENDER_API_KEY" \
+          -H "Content-Type: application/json" \
+          -d '{}'
+
