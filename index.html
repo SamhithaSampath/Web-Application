@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clearance Shopping Application</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Clearance Shopping Application</h1>
+        <p>Find amazing deals on clearance items!</p>
+    </header>
+
+    <main>
+        <section id="filter-selection">
+            <h2>Filters</h2>
+            <form id="filterForm">
+                <article>
+                    <h3>Select Categories</h3>
+                    <label><input type="checkbox" name="category" value="Clothing"> Clothing</label><br>
+                    <label><input type="checkbox" name="category" value="Electronics"> Electronics</label><br>
+                    <label><input type="checkbox" name="category" value="Home Appliances"> Home Appliances</label><br>
+                    <label><input type="checkbox" name="category" value="Books"> Books</label><br>
+                    <label><input type="checkbox" name="category" value="Toys"> Toys</label><br>
+                </article>
+
+                <article>
+                    <h3>Discount Range</h3>
+                    <label><input type="radio" name="discount" value="20"> 20% and above</label><br>
+                    <label><input type="radio" name="discount" value="30"> 30% and above</label><br>
+                    <label><input type="radio" name="discount" value="50"> 50% and above</label><br>
+                </article>
+
+                <button type="button" onclick="getProducts()">Get Clearance Deals</button>
+            </form>
+        </section>
+
+        <section id="products">
+            <h2>Recommended Products</h2>
+            <div id="loader" class="loader" style="display:none;"></div> <!-- Loader -->
+            <div id="productList"></div>
+            <div id="noProductsMessage" style="display: none; color: red; font-weight: bold;">No products found</div> <!-- No products found message -->
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Clearance Shopping Application. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
