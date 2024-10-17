@@ -1,7 +1,9 @@
 /* General styling */
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #f0f0f0;
+    background-image: url('https://c8.alamy.com/comp/2BWJT6A/happy-modern-character-in-shopping-concept-illustration-for-web-banner-flyer-landing-page-presentation-book-cover-article-etc-2BWJT6A.jpg');
+    background-size: cover; /* Cover the entire viewport */
+    background-position: center; /* Center the image */
     margin: 0;
     padding: 0;
 }
