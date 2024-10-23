@@ -164,3 +164,4 @@ function getProducts() {
         loader.style.display = "none"; // Hide the loader
     }, 1000); // 1 second delay to simulate loading
 }
+

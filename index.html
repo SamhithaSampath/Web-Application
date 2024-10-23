@@ -10,30 +10,78 @@
     <header>
         <h1>Clearance Shopping Application</h1>
         <div class="header-content">
-        <p>Find amazing deals on clearance items!</p>
+            <p>Find amazing deals on clearance items!</p>
         </div>
+        <button id="aboutUsButton" onclick="scrollToAboutUs()">About Us</button>
     </header>
+
+    <section id="promotional-images">
+        
+        <div class="promo-container">
+            <img src="https://www.shutterstock.com/image-vector/3d-shopping-sale-promotion-banner-260nw-2056851833.jpg" alt="Offer 1" class="promo-image">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYsTybJ0Zy3m1e_gyMGv_szwe3IDf_tv8e4Q&s" alt="Offer 2" class="promo-image">
+            <img src="https://static.vecteezy.com/system/resources/thumbnails/017/349/914/small_2x/clearance-sale-label-promotion-discount-banner-templates-png.png" alt="Offer 3" class="promo-image">
+        </div>
+    </section>
+
+    
+    <aside class="sidebar">
+        <nav>
+            <h3>Support</h3>
+            <ul>
+                <li><a href="#faqs" onclick="scrollToSection('faqs')">FAQs</a></li>
+                <li><a href="#contact-us" onclick="scrollToSection('contact-us')">Contact Us</a></li>
+                <li><a href="#feedback" onclick="scrollToSection('feedback')">Feedback</a></li>
+                <li><a href="#help-center" onclick="scrollToSection('help-center')">Help Center</a></li>
+            </ul>
+        </nav>
+    </aside>
 
     <main>
         <section id="filter-selection">
             <h2>Filters</h2>
             <form id="filterForm">
-                <article>
+                <article class="category-filter">
                     <h3>Select Categories</h3>
-                    <label><input type="checkbox" name="category" value="Clothing"> Clothing</label><br>
-                    <label><input type="checkbox" name="category" value="Electronics"> Electronics</label><br>
-                    <label><input type="checkbox" name="category" value="Home Appliances"> Home Appliances</label><br>
-                    <label><input type="checkbox" name="category" value="Books"> Books</label><br>
-                    <label><input type="checkbox" name="category" value="Toys"> Toys</label><br>
+                    
+                    <div class="category">
+                        <input type="checkbox" id="clothing" name="category" value="Clothing">
+                        <label for="clothing">Clothing</label>
+                        <img src="https://i.pinimg.com/736x/3a/37/71/3a3771e612af343aabdb165a09d15fb5.jpg" alt="Clothing" class="category-icon">
+                    </div>
+                    
+                    <div class="category">
+                        <input type="checkbox" id="electronics" name="category" value="Electronics">
+                        <label for="electronics">Electronics</label>
+                        <img src="https://i.pinimg.com/564x/7b/3f/e1/7b3fe1e66e263b7e0c0e1f1cfb4086c7.jpg" alt="Electronics" class="category-icon">
+                    </div>
+                    
+                    <div class="category">
+                        <input type="checkbox" id="home-appliances" name="category" value="Home Appliances">
+                        <label for="home-appliances">Home Appliances</label>
+                        <img src="https://i.pinimg.com/1200x/36/64/d3/3664d3283b71ffde2fcc06f923b1a241.jpg" alt="Home Appliances" class="category-icon">
+                    </div>
+                    
+                    <div class="category">
+                        <input type="checkbox" id="books" name="category" value="Books">
+                        <label for="books">Books</label>
+                        <img src="https://i.pinimg.com/originals/7c/5f/25/7c5f254ff923c01b7902ec52b578bc5e.jpg" alt="Books" class="category-icon">
+                    </div>
+                    
+                    <div class="category">
+                        <input type="checkbox" id="toys" name="category" value="Toys">
+                        <label for="toys">Toys</label>
+                        <img src="https://i.pinimg.com/736x/d1/1a/38/d11a38c2274d0bf0343793f3e238c934.jpg" alt="Toys" class="category-icon">
+                    </div>
                 </article>
-
+        
                 <article>
                     <h3>Discount Range</h3>
                     <label><input type="radio" name="discount" value="20"> 20% and above</label><br>
                     <label><input type="radio" name="discount" value="30"> 30% and above</label><br>
                     <label><input type="radio" name="discount" value="50"> 50% and above</label><br>
                 </article>
-
+        
                 <button type="button" onclick="getProducts()">Get Clearance Deals</button>
             </form>
         </section>
@@ -44,6 +92,65 @@
             <div id="productList"></div>
             <div id="noProductsMessage" style="display: none; color: red; font-weight: bold;">No products found</div> <!-- No products found message -->
         </section>
+        
+
+        <section id="faqs">
+            <h2>FAQs</h2>
+            <p><strong>Q: What is the Clearance Shopping Application?</strong><br>
+                A: It's a platform where you can find amazing deals on a wide range of clearance items across different categories.</p>
+                
+                <p><strong>Q: How do I find deals on specific products?</strong><br>
+                A: You can use the category filters and select the discount range that fits your needs. Then, click on "Get Clearance Deals" to view available products.</p>
+    
+                <p><strong>Q: Can I return clearance items?</strong><br>
+                A: Returns policies vary by product and seller. Please check the return policy for each item before purchasing.</p>
+    
+                <p><strong>Q: How do I contact customer support?</strong><br>
+                A: You can reach us via the "Contact Us" section below or email us at support@clearanceshop.com.</p>
+        </section>
+        <section id="contact-us">
+            <h2>Contact Us</h2>
+            <p>If you have any questions, concerns, or need assistance, feel free to get in touch with us!</p>
+            <ul>
+                <li><strong>Email:</strong> support@clearanceshop.com</li>
+                <li><strong>Phone:</strong> +1-800-555-1234</li>
+                <li><strong>Address:</strong>  
+                Clearance Shopping Application,  
+                123 Discount Lane, Suite 456,  
+                Chicago, IL 60601</li>
+            </ul>
+            <p>We are available Monday to Friday from 9 AM to 6 PM (CST). Expect a response within 24-48 hours.</p>
+        </section>
+        <section id="feedback">
+            <h2>Feedback</h2>
+            <p>We value your opinion and are constantly striving to improve our service. Please let us know your thoughts and suggestions!</p>
+            <ul>
+                <li><strong>Customer Satisfaction Survey:</strong> <a href="#">Take Survey</a></li>
+                <li><strong>Email us your feedback:</strong> feedback@clearanceshop.com</li>
+            </ul>
+            <form>
+                <label for="feedbackText">Your feedback:</label><br>
+                <textarea id="feedbackText" name="feedbackText" rows="4" cols="50" placeholder="Share your experience..."></textarea><br>
+                <button type="submit">Submit</button>
+            </form>
+            <p>Thank you for helping us improve!</p>
+        </section>
+        <section id="help-center">
+            <h2>Help Center</h2>
+            <p>Need help? We're here to assist you!</p>
+            <ul>
+                <li><strong>Product Inquiries:</strong> Browse through our FAQs for answers to common questions. If you can't find what you're looking for, contact our support team.</li>
+                <li><strong>Order Tracking:</strong> To track your order, log into your account and go to the "Order History" section. You can also reach out to our support team for assistance.</li>
+                <li><strong>Returns & Refunds:</strong> Learn more about our return policy under the "Returns" section on each product page. For more details, contact support.</li>
+                <li><strong>Live Chat Support:</strong> Have an urgent question? Use our live chat feature available from 9 AM to 6 PM (CST).</li>
+            </ul>
+            <p>Feel free to reach out if you need further assistance!</p>
+        </section>
+        <section id="about-us">
+            <h2>About Us</h2>
+            <p>Welcome to the Clearance Shopping Application! Here, we offer amazing deals on a variety of clearance items. Our mission is to help you save money while shopping for high-quality products. Enjoy browsing our collection and happy shopping!</p>
+        </section>
+
 
     </main>
 
@@ -52,6 +159,19 @@
     </footer>
 
     <script src="script.js"></script>
+    <script>
+        // Scroll to About Us section
+        function scrollToAboutUs() {
+            const aboutUsSection = document.getElementById('about-us');
+            aboutUsSection.scrollIntoView({ behavior: 'smooth' });
+        }
+
+         // Scroll to specific sections
+         function scrollToSection(sectionId) {
+            const section = document.getElementById(sectionId);
+            section.scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
 </body>
 </html>
 

@@ -8,12 +8,61 @@ body {
     padding: 0;
 }
 
+
+
 header {
-    background-color: #cc1f90;
+    background: linear-gradient(45deg, #cc1f90, #ff6f91); /* Base gradient colors */
+    background-size: 200% 200%; /* Allows the gradient to animate smoothly */
     color: white;
     padding: 20px;
     text-align: center;
+    font-size: 24px; /* Adjust font size as needed */
+    animation: gradientAnimation 5s ease infinite; /* Animation for the gradient */
+    border-radius: 10px; /* Optional: adds rounded corners */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Optional: adds shadow for depth */
+    position: relative; /* Positioning for pseudo-elements */
+    overflow: hidden; /* Hides overflow to prevent glitter going outside */
+    margin-bottom: 0px; /* Reduce space below header */
 }
+
+/* Keyframes for gradient animation */
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%; /* Start position */
+    }
+    50% {
+        background-position: 100% 50%; /* Middle position */
+    }
+    100% {
+        background-position: 0% 50%; /* End position */
+    }
+}
+
+/* Glitter effect using pseudo-element */
+header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+    opacity: 2.5; /* Increased opacity for a more pronounced effect */
+    pointer-events: none; /* Allows clicks through the pseudo-element */
+    animation: glitterAnimation 0.2s infinite; /* Animation for glitter */
+}
+
+/* Keyframes for glitter animation */
+@keyframes glitterAnimation {
+    0% {
+        transform: translateY(0); /* Start position */
+    }
+    100% {
+        transform: translateY(-100%); /* Move up */
+    }
+}
+
+
 
 h1 {
     margin: 0;
@@ -38,7 +87,7 @@ h1 {
 
 
 section {
-    margin: 20px;
+    margin: 0px;
 }
 
 /* Filter selection form */
@@ -64,7 +113,7 @@ label {
 
 /* Button styling */
 button {
-    background-color: #1ebc1e;
+    background-color: #e491d5;
     color: white;
     padding: 10px 20px;
     border: none;
@@ -81,16 +130,16 @@ button:hover {
 /* Product list section */
 #productList {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    flex-wrap: wrap; /* This ensures the items wrap if there's not enough space */
+    justify-content: flex-start; /* Align products to the start of the container */
+    gap: 20px; /* Space between each product card */
     margin-top: 20px;
 }
 
 .product-card {
     background-color: white;
-    width: 100%; /* Full width on smaller screens */
-    max-width: 250px; /* Limit on larger screens */
-    margin: 15px;
+    width: 200px; /* Set a fixed width for each product card */
+    margin: 15px; /* Margin between product cards */
     padding: 15px;
     border-radius: 10px;
     box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
@@ -167,6 +216,166 @@ button:hover {
 
     .product-card img {
         width: 120px;
+    }
+}
+
+
+
+/* About Us Section */
+#about-us {
+    background-color: rgb(247, 218, 239);
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px auto;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    width: 90%; /* Adjusted for mobile */
+    max-width: 600px; /* Limit max width on larger screens */
+}
+
+#about-us h2 {
+    margin-top: 0;
+}
+
+/* About Us Button */
+#aboutUsButton {
+    background-color: #e491d5;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: background-color 0.3s ease;
+}
+
+#aboutUsButton:hover {
+    background-color: #0a0a0a;
+}
+
+.category-filter {
+    display: flex; /* Use flexbox to arrange items horizontally */
+    flex-wrap: wrap; /* Allow items to wrap if there's not enough space */
+    justify-content: flex-start; /* Align items to the start */
+}
+
+.category {
+    display: flex; /* Use flexbox to align label and image */
+    flex-direction: column; /* Stack the label and image vertically */
+    align-items: center; /* Center align the content */
+    margin: 10px; /* Space around each category */
+    text-align: center; /* Center align text */
+    width: 120px; /* Fixed width to maintain alignment */
+}
+
+.category-icon {
+    width: 135px; /* Adjust size as needed */
+    height: 140px; /* Adjust size as needed */
+    margin-top: 5px; /* Space between label and image */
+}
+
+/* Sidebar styling */
+.sidebar { 
+    width: 150px; /* Adjust width as needed */
+    background-color: #f8f9fa; /* Light background for contrast */
+    padding: 15px; /* Padding for better spacing */
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Optional shadow */
+    height: 100%; /* Full height of the viewport */
+    margin-top: 0px; /* Add margin to push it below the header */
+    float: left; /* Aligns sidebar to the left of the content */
+}
+
+/* Sidebar nav link styles */
+.sidebar nav ul {
+    list-style: none; /* Remove bullet points */
+    padding: 0; /* Remove padding */
+}
+
+.sidebar nav ul li {
+    margin: 10px 0; /* Spacing between links */
+}
+
+.sidebar nav ul li a {
+    text-decoration: none; /* Remove underline */
+    color: #333; /* Text color */
+    font-size: 18px; /* Font size for links */
+    padding: 10px; /* Padding for links */
+    display: block; /* Make the link fill the entire list item */
+    border-radius: 5px; /* Rounded corners for links */
+    transition: background 0.3s; /* Transition effect */
+}
+
+.sidebar nav ul li a:hover {
+    background-color: #e2e6ea; /* Change background on hover */
+}
+
+/* Ensure main content has enough space */
+main {
+    margin-left: 40px; /* Adjust margin to avoid overlap with the sidebar */
+    padding: 15px; /* Optional padding for main content */
+    clear: both; /* Clear floats to ensure proper layout */
+}
+
+/* Support section styling to make sections stand out */
+section {
+    background-color: rgba(255, 255, 255, 0.9); /* White background with slight transparency */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1); /* Add a shadow for separation */
+    margin-bottom: 20px; /* Space between sections */
+    width: 80%; /* Control width for readability */
+    max-width: 600px; /* Limits maximum width on larger screens */
+    margin: 20px auto; /* Center the sections */
+    text-align: left; /* Align text to the left */
+}
+
+/* Style specific to individual sections like FAQs, Contact Us, Feedback, etc. */
+#faqs, #contact-us, #feedback, #help-center {
+    margin: 20px auto;
+}
+
+/* Optional hover effect for support section links */
+#faqs:hover, #contact-us:hover, #feedback:hover, #help-center:hover {
+    background-color: rgba(255, 255, 255, 1); /* Make background fully opaque on hover */
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.15); /* Slightly deeper shadow on hover */
+}
+
+/* Promotional Images Section */
+#promotional-images {
+    margin-top: 0; /* Remove space above promotional section */
+    padding: 0; /* Remove any padding */
+    overflow: hidden; /* Hide overflowing content */
+    position: relative; /* Position relative for absolute positioning of children */
+    height: 405px; /* Adjust the height as needed */
+
+}
+
+.promo-container {
+    display: flex; /* Use flexbox for horizontal arrangement */
+    animation: slide 16s infinite; /* Infinite animation of sliding */
+}
+
+.promo-image {
+    min-width: 100%; /* Each image takes full width */
+    transition: transform 0.5s ease; /* Smooth transition for image movement */
+}
+
+
+/* Keyframe animation for sliding effect */
+@keyframes slide {
+    0% {
+        transform: translateX(0); /* Start position */
+    }
+    25% {
+        transform: translateX(-100%); /* Move left */
+    }
+    50% {
+        transform: translateX(-200%); /* Move further left */
+    }
+    75% {
+        transform: translateX(-300%); /* Move even further left */
+    }
+    100% {
+        transform: translateX(0); /* Reset to start */
     }
 }
 
