@@ -165,3 +165,15 @@ function getProducts() {
     }, 1000); // 1 second delay to simulate loading
 }
 
+// JavaScript to toggle the FAQ content visibility
+document.querySelectorAll('.faq-button').forEach(button => {
+    button.addEventListener('click', () => {
+        const content = button.nextElementSibling; // The div with class 'faq-content'
+        
+        // Toggle the visibility of the content
+        content.style.display = content.style.display === 'block' ? 'none' : 'block';
+    });
+});
+
+
+

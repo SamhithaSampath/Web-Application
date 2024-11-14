@@ -11,10 +11,10 @@ body {
 
 
 header {
-    background: linear-gradient(45deg, #cc1f90, #ff6f91); /* Base gradient colors */
+    background: linear-gradient(45deg, #f763b7, #f90f9f); /* Base gradient colors */
     background-size: 200% 200%; /* Allows the gradient to animate smoothly */
     color: white;
-    padding: 20px;
+    padding: 1px;
     text-align: center;
     font-size: 24px; /* Adjust font size as needed */
     animation: gradientAnimation 5s ease infinite; /* Animation for the gradient */
@@ -72,7 +72,7 @@ h1 {
 .header-content {
     overflow: hidden; /* Prevent overflow during animation */
     white-space: nowrap; /* Prevent line breaks */
-    animation: scroll 11s linear infinite; /* Scroll animation */
+    animation:none; /* Scroll animation */
 }
 
 /* Keyframe animation */
@@ -97,18 +97,35 @@ section {
     border-radius: 10px;
     margin: 0 auto;
     box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
-    width: 90%; /* Adjusted for mobile */
-    max-width: 400px; /* Still limits max width on larger screens */
+    width: 60%; /* Adjusted for mobile */
+    max-width: 2000px; /* Adjust this width for a more spacious layout */
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping of elements when needed */
+    justify-content: space-between; /* Space out the elements */
 }
 
+/* Header for filters */
 h3 {
     margin-top: 20px;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
+    width: 10%; /* Ensure the heading takes full width */
 }
 
-label {
+/* Style for individual filter elements */
+#filter-selection label {
+    display: inline-block; /* Keeps the label aligned with the input fields */
     margin-bottom: 10px;
-    display: block;
+    width: 25%; /* Adjust width for labels */
+    text-align:right; 
+}
+
+/* Style for the input fields */
+#filter-selection input,
+#filter-selection select {
+    width: 100%; /* Adjust width for the input fields */
+    padding: 15px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
 }
 
 /* Button styling */
@@ -121,10 +138,29 @@ button {
     cursor: pointer;
     margin-top: 15px;
     transition: background-color 0.3s ease;
+    width: 100%; /* Make the button span the full width */
+    margin: 0 auto;
 }
 
 button:hover {
     background-color: #06fa16;
+}
+
+/* Ensure responsive design on smaller screens */
+@media (max-width: 768px) {
+    #filter-selection {
+        flex-direction: column; /* Stack elements vertically on smaller screens */
+    }
+
+    #filter-selection label,
+    #filter-selection input,
+    #filter-selection select {
+        width: 100%; /* Make input fields and labels take full width */
+    }
+
+    button {
+        width: 100%; /* Full-width button on small screens */
+    }
 }
 
 /* Product list section */
@@ -246,6 +282,7 @@ button:hover {
     cursor: pointer;
     margin-top: 15px;
     transition: background-color 0.3s ease;
+    width: 200px;
 }
 
 #aboutUsButton:hover {
@@ -273,40 +310,6 @@ button:hover {
     margin-top: 5px; /* Space between label and image */
 }
 
-/* Sidebar styling */
-.sidebar { 
-    width: 150px; /* Adjust width as needed */
-    background-color: #f8f9fa; /* Light background for contrast */
-    padding: 15px; /* Padding for better spacing */
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Optional shadow */
-    height: 100%; /* Full height of the viewport */
-    margin-top: 0px; /* Add margin to push it below the header */
-    float: left; /* Aligns sidebar to the left of the content */
-}
-
-/* Sidebar nav link styles */
-.sidebar nav ul {
-    list-style: none; /* Remove bullet points */
-    padding: 0; /* Remove padding */
-}
-
-.sidebar nav ul li {
-    margin: 10px 0; /* Spacing between links */
-}
-
-.sidebar nav ul li a {
-    text-decoration: none; /* Remove underline */
-    color: #333; /* Text color */
-    font-size: 18px; /* Font size for links */
-    padding: 10px; /* Padding for links */
-    display: block; /* Make the link fill the entire list item */
-    border-radius: 5px; /* Rounded corners for links */
-    transition: background 0.3s; /* Transition effect */
-}
-
-.sidebar nav ul li a:hover {
-    background-color: #e2e6ea; /* Change background on hover */
-}
 
 /* Ensure main content has enough space */
 main {
@@ -315,80 +318,180 @@ main {
     clear: both; /* Clear floats to ensure proper layout */
 }
 
-/* Support section styling to make sections stand out */
-section {
-    background-color: rgba(255, 255, 255, 0.9); /* White background with slight transparency */
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1); /* Add a shadow for separation */
-    margin-bottom: 20px; /* Space between sections */
-    width: 80%; /* Control width for readability */
-    max-width: 600px; /* Limits maximum width on larger screens */
-    margin: 20px auto; /* Center the sections */
-    text-align: left; /* Align text to the left */
-}
-
-/* Style specific to individual sections like FAQs, Contact Us, Feedback, etc. */
-#faqs, #contact-us, #feedback, #help-center {
-    margin: 20px auto;
-}
-
-/* Optional hover effect for support section links */
-#faqs:hover, #contact-us:hover, #feedback:hover, #help-center:hover {
-    background-color: rgba(255, 255, 255, 1); /* Make background fully opaque on hover */
-    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.15); /* Slightly deeper shadow on hover */
-}
-
 /* Promotional Images Section */
 #promotional-images {
     margin-top: 0; /* Remove space above promotional section */
     padding: 0; /* Remove any padding */
     overflow: hidden; /* Hide overflowing content */
     position: relative; /* Position relative for absolute positioning of children */
-    height: 405px; /* Adjust the height as needed */
-
+    height: 308px; /* Adjust the height as needed */
 }
 
 .promo-container {
     display: flex; /* Use flexbox for horizontal arrangement */
-    animation: slide 16s infinite; /* Infinite animation of sliding */
+    animation: slide 30s infinite; /* Slower animation of sliding */
 }
 
 .promo-image {
-    min-width: 100%; /* Each image takes full width */
-    transition: transform 0.5s ease; /* Smooth transition for image movement */
+    min-width: 30%; /* Each image takes full width */
+    transition: transform 2s ease; /* Smooth transition for image movement */
 }
 
-
-/* Keyframe animation for sliding effect */
+/* Keyframe animation for slower sliding effect */
 @keyframes slide {
     0% {
         transform: translateX(0); /* Start position */
     }
-    25% {
-        transform: translateX(-100%); /* Move left */
+    40% {
+        transform: translateX(-33.33%); /* Move to the left slowly */
     }
-    50% {
-        transform: translateX(-200%); /* Move further left */
-    }
-    75% {
-        transform: translateX(-300%); /* Move even further left */
+    60% {
+        transform: translateX(-33.33%); /* Hold position for a moment */
     }
     100% {
-        transform: translateX(0); /* Reset to start */
+        transform: translateX(0); /* Slowly return to the starting position */
+    }
+}
+
+/* Container to hold both FAQs and Contact Us */
+#container {
+    display: flex; /* Use flexbox to display them side by side */
+    justify-content: space-between; /* Space out the two sections */
+    gap: 30px; /* Optional: Space between the two sections */
+    margin-bottom: 20px; /* Optional: Add margin to the bottom */
+}
+
+/* FAQ section styling */
+#faqs {
+    background-color: #f9f9f9; /* Light gray background */
+    padding: 20px; /* Padding inside the box */
+    border-radius: 8px; /* Rounded corners */
+    width: 48%; /* Adjust the width for side-by-side layout */
+}
+
+/* Contact Us section styling */
+#contact-us {
+    background-color:#f9f9f9;
+    padding: 20px; /* Padding inside the box */
+    border-radius: 8px; /* Rounded corners */
+    width: 48%; /* Adjust the width for side-by-side layout */
+}
+
+@media (max-width: 768px) {
+    #container {
+        flex-direction: column; /* Stack the sections vertically */
+    }
+
+    #faqs, #contact-us {
+        width: 100%; /* Each section will take up full width */
     }
 }
 
 
+/* Recommended Button */
+#recommendedButton {
+    color: white;  /* White text */
+    padding: 10px 20px;  /* Space inside the button */
+    border: none;  /* No border */
+    border-radius: 5px;  /* Rounded corners */
+    cursor: pointer;  /* Pointer on hover */
+    font-size: 16px;  /* Font size */
+    margin-bottom: 20px;  /* Margin below the button */
+    transition: background-color 0.3s ease;  /* Smooth transition for hover effect */
+    width: 200px;  /* Fixed width for the button (adjust as needed) */
+    text-align:left;  /* Center the text inside the button */
+    background: linear-gradient(45deg, #e1d7d7, rgb(151, 135, 144));  /* Initial gradient */
+    background-size: 400% 400%;  /* Set gradient size for animation */
+    animation: gradientAnimation 3s ease infinite;  /* Apply the gradient animation */
+}
 
+/* Gradient animation */
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;  /* Start gradient position */
+    }
+    80% {
+        background-position: 100% 50%;  /* End gradient position */
+    }
+    100% {
+        background-position: 0% 50%;  /* Reset gradient position */
+    }
+}
 
+/* Style for the FAQ section */
+#faqs {
+    margin: 20px;
+}
 
+.faq-item {
+    margin-bottom: 10px;
+}
 
+.faq-button {
+    width: 100%;
+    padding: 10px;
+    background-color: #e491d5;
+    color: white;
+    border: none;
+    text-align: left;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
 
+.faq-button:hover {
+    background-color: #d478c7; /* Darker pink on hover */
+}
 
+.faq-content {
+    display: none;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-left: 3px solid #e491d5;
+    margin-top: 5px;
+}
 
+/* Style for the Contact Us section */
+#contact-us {
+    margin: 20px;
+}
 
+.contact-button {
+    width: 100%;
+    padding: 10px;
+    background-color: #e491d5;
+    color: white;
+    border: none;
+    text-align: left;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    display: block; /* Ensures the button takes full width */
+    text-align: center; /* Align text in the center */
+}
 
+.contact-button:hover {
+    background-color: #d478c7; /* Darker pink on hover */
+}
 
+.contact-content {
+    display: none; /* Initially hide the content box completely */
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-left: 3px solid #e491d5;
+    margin-top: 5px;
+}
 
-
+/* Footer styling */
+footer {
+    
+    color: white; /* Set text color */
+    padding: 20px; /* Add padding to space out the content */
+    text-align: center; /* Center align the content */
+    font-size: 16px; /* Set font size */
+    position: relative; /* Position relative for any positioning of child elements */
+    bottom: 0; /* Keep the footer at the bottom of the page */
+    width: 100%; /* Ensure the footer takes full width */
+}

@@ -21,21 +21,10 @@
             <img src="https://www.shutterstock.com/image-vector/3d-shopping-sale-promotion-banner-260nw-2056851833.jpg" alt="Offer 1" class="promo-image">
             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYsTybJ0Zy3m1e_gyMGv_szwe3IDf_tv8e4Q&s" alt="Offer 2" class="promo-image">
             <img src="https://static.vecteezy.com/system/resources/thumbnails/017/349/914/small_2x/clearance-sale-label-promotion-discount-banner-templates-png.png" alt="Offer 3" class="promo-image">
+            <img src="https://blessingstelecom.com/img/developerimg/choco_blessingstelecom_20200113100659_db/mebase/CustomSectionStyle/Images/original_200219061202_5e4cd1b2c5eb3.jpg" alt="Offer 4" class="promo-image">
         </div>
-    </section>
 
-    
-    <aside class="sidebar">
-        <nav>
-            <h3>Support</h3>
-            <ul>
-                <li><a href="#faqs" onclick="scrollToSection('faqs')">FAQs</a></li>
-                <li><a href="#contact-us" onclick="scrollToSection('contact-us')">Contact Us</a></li>
-                <li><a href="#feedback" onclick="scrollToSection('feedback')">Feedback</a></li>
-                <li><a href="#help-center" onclick="scrollToSection('help-center')">Help Center</a></li>
-            </ul>
-        </nav>
-    </aside>
+    </section>
 
     <main>
         <section id="filter-selection">
@@ -87,65 +76,66 @@
         </section>
 
         <section id="products">
-            <h2>Recommended Products</h2>
+            
+            <button id="recommendedButton">Here You Go....!</button>
             <div id="loader" class="loader" style="display:none;"></div> <!-- Loader -->
             <div id="productList"></div>
             <div id="noProductsMessage" style="display: none; color: red; font-weight: bold;">No products found</div> <!-- No products found message -->
         </section>
         
+        
 
-        <section id="faqs">
-            <h2>FAQs</h2>
-            <p><strong>Q: What is the Clearance Shopping Application?</strong><br>
-                A: It's a platform where you can find amazing deals on a wide range of clearance items across different categories.</p>
+        <section id="container">
+            <section id="faqs">
+                <h2>FAQs</h2>
                 
-                <p><strong>Q: How do I find deals on specific products?</strong><br>
-                A: You can use the category filters and select the discount range that fits your needs. Then, click on "Get Clearance Deals" to view available products.</p>
-    
-                <p><strong>Q: Can I return clearance items?</strong><br>
-                A: Returns policies vary by product and seller. Please check the return policy for each item before purchasing.</p>
-    
-                <p><strong>Q: How do I contact customer support?</strong><br>
-                A: You can reach us via the "Contact Us" section below or email us at support@clearanceshop.com.</p>
+                <!-- FAQ 1 -->
+                <div class="faq-item">
+                    <button class="faq-button">What is the Clearance Shopping Application?</button>
+                    <div class="faq-content">
+                        <p>A: It's a platform where you can find amazing deals on a wide range of clearance items across different categories.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ 2 -->
+                <div class="faq-item">
+                    <button class="faq-button">How do I find deals on specific products?</button>
+                    <div class="faq-content">
+                        <p>A: You can use the category filters and select the discount range that fits your needs. Then, click on "Get Clearance Deals" to view available products.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ 3 -->
+                <div class="faq-item">
+                    <button class="faq-button">Can I return clearance items?</button>
+                    <div class="faq-content">
+                        <p>A: Returns policies vary by product and seller. Please check the return policy for each item before purchasing.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ 4 -->
+                <div class="faq-item">
+                    <button class="faq-button">How do I contact customer support?</button>
+                    <div class="faq-content">
+                        <p>A: You can reach us via the "Contact Us" section below or email us at support@clearanceshop.com.</p>
+                    </div>
+                </div>
+                
+            </section>
+            <section id="contact-us">
+                <button class="contact-button">Contact Us</button>
+                <div id="contact-details" class="contact-details">
+                    <p>If you have any questions, concerns, or need assistance, feel free to get in touch with us!</p>
+                    <p><strong>Email:</strong> <a href="mailto:support@clearanceshop.com">support@clearanceshop.com</a></p>
+                    <p><strong>Phone:</strong> +1-800-555-1234</p>
+                    <p><strong>Address:</strong> Clearance Shopping Application, 123 Discount Lane, Suite 456, Chicago, IL 60601</p>
+                    <p>We are available Monday to Friday from 9 AM to 6 PM (CST). Expect a response within 24-48 hours.</p>
+                </div>
+            </section>
         </section>
-        <section id="contact-us">
-            <h2>Contact Us</h2>
-            <p>If you have any questions, concerns, or need assistance, feel free to get in touch with us!</p>
-            <ul>
-                <li><strong>Email:</strong> support@clearanceshop.com</li>
-                <li><strong>Phone:</strong> +1-800-555-1234</li>
-                <li><strong>Address:</strong>  
-                Clearance Shopping Application,  
-                123 Discount Lane, Suite 456,  
-                Chicago, IL 60601</li>
-            </ul>
-            <p>We are available Monday to Friday from 9 AM to 6 PM (CST). Expect a response within 24-48 hours.</p>
-        </section>
-        <section id="feedback">
-            <h2>Feedback</h2>
-            <p>We value your opinion and are constantly striving to improve our service. Please let us know your thoughts and suggestions!</p>
-            <ul>
-                <li><strong>Customer Satisfaction Survey:</strong> <a href="https://docs.google.com/forms/d/e/1FAIpQLSca9rOFjQw5P9qWwE61oYngX-ca1gQq6f_SdpQKt-6vJzd8Fg/viewform?usp=sf_link">Take Survey</a></li>
-                <li><strong>Email us your feedback:</strong> feedback@clearanceshop.com</li>
-            </ul>
-            <form>
-                <label for="feedbackText">Your feedback:</label><br>
-                <textarea id="feedbackText" name="feedbackText" rows="4" cols="50" placeholder="Share your experience..."></textarea><br>
-                <button type="submit">Submit</button>
-            </form>
-            <p>Thank you for helping us improve!</p>
-        </section>
-        <section id="help-center">
-            <h2>Help Center</h2>
-            <p>Need help? We're here to assist you!</p>
-            <ul>
-                <li><strong>Product Inquiries:</strong> Browse through our FAQs for answers to common questions. If you can't find what you're looking for, contact our support team.</li>
-                <li><strong>Order Tracking:</strong> You can reach out to our support team for assistance.</li>
-                <li><strong>Returns & Refunds:</strong> Learn more about our return policy under the "Returns" section on each product page. For more details, contact support.</li>
-                <li><strong>Live Chat Support:</strong> Have an urgent question? Use our live chat feature available from 9 AM to 6 PM (CST).</li>
-            </ul>
-            <p>Feel free to reach out if you need further assistance!</p>
-        </section>
+        
+        
+        
         <section id="about-us">
             <h2>About Us</h2>
             <p>Welcome to the Clearance Shopping Application! Here, we offer amazing deals on a variety of clearance items. Our mission is to help you save money while shopping for high-quality products. Enjoy browsing our collection and happy shopping!</p>
